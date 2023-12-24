@@ -105,6 +105,12 @@ public partial class Program
          .UseSerilog((hostingContext, services, loggerConfiguration) =>
          {
             loggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration);
+
+            // if we're in an interactive environment, add console output
+            if (Environment.UserInteractive)
+            {
+               loggerConfiguration.WriteTo.Console();
+            }
          })
          .UseWindowsService(options =>
          {

@@ -41,7 +41,7 @@ public partial class Program : IDisposable
          this.commandLineOptions = cmdLineOptions;
 
          // the initial bootstrap logger is able to log errors during start-up;
-         // it's fully replaced by the logger configured in `UseSerilog()`
+         // it is replaced by the logger configured in `UseSerilog()`
          Log.Logger = new LoggerConfiguration()
              .WriteTo.Console()
              .CreateBootstrapLogger();
