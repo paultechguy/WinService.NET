@@ -9,7 +9,7 @@ param (
     [Parameter(Mandatory=$true)]
     [string]$newString,
     
-    [string[]]$fileTypes = @(".cs", ".csproj", ".sln"), # don't update *.md
+    [string[]]$fileTypes = @(".cs", ".csproj", ".sln", ".json"), # don't update *.md
     
     [string[]]$ignoreDirs = @("obj", "bin")
 )

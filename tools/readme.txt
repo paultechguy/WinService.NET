@@ -13,4 +13,4 @@ so please understand what this means and consider the risks.
 ASSUMING YOU ARE IN THE SRC DIRECTORY, replace all occurrences of "WinService" with "CheckCpuService"
 in the current directory and its subdirectories, ignoring directories named "bin", "obj":
 
-PS> ..\tools\RenameWinService.ps1 -path "." -oldString "WinService" -newString "CheckCpuService" -fileTypes ".sln", ".csproj", ".cs"
+PS> ..\tools\RenameWinService.ps1 -path "." -oldString "WinService" -newString "CheckCpuService" -fileTypes ".sln", ".csproj", ".cs", ".json"
