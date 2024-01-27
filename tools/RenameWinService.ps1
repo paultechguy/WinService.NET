@@ -1,17 +1,17 @@
 ﻿# define parameters
 param (
-	[Parameter(Mandatory=$true)]
+    [Parameter(Mandatory=$true)]
     [string]$path,
     
-	[Parameter(Mandatory=$true)]
-	[string]$oldString = "WinService",
+    [Parameter(Mandatory=$true)]
+    [string]$oldString = "WinService",
     
-	[Parameter(Mandatory=$true)]
-	[string]$newString,
+    [Parameter(Mandatory=$true)]
+    [string]$newString,
     
-	[string[]]$fileTypes = @(".cs", ".csproj", ".sln", ".json"), # don't update *.md
+    [string[]]$fileTypes = @(".cs", ".csproj", ".sln"), # don't update *.md
     
-	[string[]]$ignoreDirs = @("obj", "bin")
+    [string[]]$ignoreDirs = @("obj", "bin")
 )
 
 function RenameFileContents {

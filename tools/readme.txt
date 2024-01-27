@@ -8,9 +8,9 @@ Get-ExecutionPolicy, and set it to allow scripts with Set-ExecutionPolicy Remote
 or Set-ExecutionPolicy Unrestricted. Be aware that this can have security implications,
 so please understand what this means and consider the risks.
 
-EXAMPLE
+** EXAMPLE** 
 
-Replace all occurrences of "old" with "new" in all .cs and .csproj files in the
-current directory and its subdirectories, ignoring directories named "bin" and "obj":
+ASSUMING YOU ARE IN THE SRC DIRECTORY, replace all occurrences of "WinService" with "CheckCpuService"
+in the current directory and its subdirectories, ignoring directories named "bin", "obj":
 
-.\ReplaceString.ps1 -path "." -oldString "old" -newString "new" -fileTypes "*.txt", "*.docx" -ignoreDirs "ignoreDir1", "ignoreDir2"
+PS> ..\tools\RenameWinService.ps1 -path "." -oldString "WinService" -newString "CheckCpuService" -fileTypes ".sln", ".csproj", ".cs"

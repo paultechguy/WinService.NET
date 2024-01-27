@@ -24,7 +24,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RenameWinService", "RenameWinService", "{B8AE3BE7-CDF7-4EFA-9ED3-B05AFBB5812F}"
 	ProjectSection(SolutionItems) = preProject
 		..\tools\RenameWinService.ps1 = ..\tools\RenameWinService.ps1
-		..\tools\RenameWinService.readme = ..\tools\RenameWinService.readme
+		..\tools\readme.txt = ..\tools\readme.txt
 	EndProjectSection
 EndProject
 Global
