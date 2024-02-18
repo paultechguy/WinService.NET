@@ -14,10 +14,12 @@ using WinService.Core.Interfaces;
 
 public sealed class WindowsBackgroundService(
    IWorkerService appService,
+   IHostApplicationLifetime applicationLifetime,
    ILogger<WindowsBackgroundService> logger)
    : BackgroundService
 {
    private readonly IWorkerService appService = appService;
+   private readonly IHostApplicationLifetime appLifetime = applicationLifetime;
    private readonly ILogger<WindowsBackgroundService> logger = logger;
 
    protected override async Task ExecuteAsync(CancellationToken cancelToken)
@@ -27,6 +29,9 @@ public sealed class WindowsBackgroundService(
       try
       {
          await this.appService.ExecuteAsync(cancelToken);
+
+         // we need to stop the hosted service, which will ensure application exit
+         this.appLifetime.StopApplication();
       }
       catch (OperationCanceledException)
       {
